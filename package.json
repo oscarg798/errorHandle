@@ -1,0 +1,25 @@
+{
+  "name": "errorHandle",
+  "version": "1.0.0",
+  "description": "module for error handling in  sailsjs, firts version ",
+  "main": "errorHandle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oscarg798/errorHandle.git"
+  },
+  "keywords": [
+    "error",
+    "sails",
+    "handler",
+    "err"
+  ],
+  "author": "Oscar Gallon <oscarg798@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscarg798/errorHandle/issues"
+  },
+  "homepage": "https://github.com/oscarg798/errorHandle"
+}
