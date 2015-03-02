@@ -7,34 +7,25 @@ module.exports = function(err) {
             message =  'Informacion  Invalida para el ' + errJson.model + ' , verifique Por Favor los siguientes atributos: ' + getPropertiesNames(errJson.invalidAttributes);
             return message;
         case 401:
-            message = [{
-                Mensaje: 'No esta Autorizado para realizar esta accion'
-            }]
+            message = 'No Esta Autorizado Para Esta Accion';
             return message;
         case 403:
-            message = [{
-                Mensaje: 'Prohibido realizar esta accion'
-            }]
+            message = 'Accion Prohibida';
             return message;
         case 404:
-            message = [{
-                Mensaje: 'Recurso No Encontrado'
-            }]
+            message = 'El Recurso Solicitado No Ha Sido Encontrado';
             return message;
         case 500:
-            message = [{
-                Mensaje: 'Error interno comuniquese con el administrador del sistema'
-            }]
+            message = 'Error en la comunicacion con la base de datos, puede ser por '+
+            'llave primaria duplicada o informacion faltante, si el error persiste '+
+            'comuniquese con el administrador del sistema';
             return message;
         case 503:
-            message = [{
-                Mensaje: 'Servicio no Disponible'
-            }]
+            message = 'Servicio no Disponible';
             return message;
         default:
-            message = [{
-                Mensaje: 'Error, comuniquese con el administrador del sistema'
-            }]
+            message =  'Error, comuniquese con el administrador del sistema';
+           
             return message;
     }
 
