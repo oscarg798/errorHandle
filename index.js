@@ -18,7 +18,7 @@ module.exports = function(err) {
             return message;
         case 404:
             message = [{
-                Mensaje: 'No Encontrado'
+                Mensaje: 'Recurso No Encontrado'
             }]
             return message;
         case 500:

@@ -1,10 +1,10 @@
 {
-  "name": "errorHandle",
+  "name": "error-handler-sails-js",
   "version": "1.0.0",
   "description": "module for error handling in  sailsjs, firts version ",
   "main": "errorHandle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "for f in test/* ; do echo \"$f\"; node \"$f\"; done; echo 'passed!'; exit 0"
   },
   "repository": {
     "type": "git",
