@@ -4,7 +4,7 @@ module.exports = function(err) {
     console.log(errJson);
     switch (err.status) {
         case 400:
-            message =  'Informacion  Invalida para el ' + errJson.model + ' , verifique Por Favor los siguientes atributos: ' + getPropertiesNames(errJson.invalidAttributes);
+            message = 'Informacion  Invalida para el ' + errJson.model + ' , verifique Por Favor los siguientes atributos: ' + getPropertiesNames(errJson.invalidAttributes);
             return message;
         case 401:
             message = 'No Esta Autorizado Para Esta Accion';
@@ -16,23 +16,30 @@ module.exports = function(err) {
             message = 'El Recurso Solicitado No Ha Sido Encontrado';
             return message;
         case 500:
-            message = 'Error en la comunicacion con la base de datos, puede ser por '+
-            'llave primaria duplicada o informacion faltante, si el error persiste '+
-            'comuniquese con el administrador del sistema';
+            if (errJson.raw) {
+                message={
+                    error:'El nombre de usuario o el  email  ingresados
+                    ya estan en uso, verifique por favor'
+                }
+
+            } else {
+
+                message = 'Error del sistema';
+            }
             return message;
         case 503:
             message = 'Servicio no Disponible';
             return message;
         default:
-            message =  'Error, comuniquese con el administrador del sistema';
-           
+            message = 'Error, comuniquese con el administrador del sistema';
+
             return message;
     }
 
 };
 
 function getPropertiesNames(obj) {
-    var message='';
+    var message = '';
     for (var key in obj) {
         message += key + ', ';
 
