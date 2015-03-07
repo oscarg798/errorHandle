@@ -1,6 +1,6 @@
 {
   "name": "error-handler-sails-js",
-  "version": "1.0.3.1",
+  "version": "1.0.4",
   "description": "module for error handling in  sailsjs, firts version ",
   "main": "errorHandle.js",
   "scripts": {
