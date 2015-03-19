@@ -17,10 +17,8 @@ module.exports = function(err) {
             return message;
         case 500:
             if (errJson.raw) {
-                message={
-                    error:'El nombre de usuario o el  email  ingresados
-                    ya estan en uso, verifique por favor'
-                }
+                message='Alguna de la información que esta tratando de ingresar ya existe en la base de datos, por favor verifique'
+                
 
             } else {
 
