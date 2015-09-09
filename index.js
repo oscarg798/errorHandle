@@ -1,7 +1,13 @@
 module.exports = function(err) {
     var message;
-    errJson = err.toJSON();
-    console.log(errJson);
+    try {
+         errJson = err.toJSON();
+        console.log(errJson);
+    } catch (err) {
+        return  message = 'Error del sistema';
+    }
+   
+ 
     switch (err.status) {
         case 400:
             message = 'Informacion  Invalida para el ' + errJson.model + ' , verifique Por Favor los siguientes atributos: ' + getPropertiesNames(errJson.invalidAttributes);
@@ -17,11 +23,9 @@ module.exports = function(err) {
             return message;
         case 500:
             if (errJson.raw) {
-                message='Alguna de la información que esta tratando de ingresar ya existe en la base de datos, por favor verifique'
-                
+                message = 'Alguna de la información que esta tratando de ingresar ya existe en la base de datos, por favor verifique'
 
             } else {
-
                 message = 'Error del sistema';
             }
             return message;
@@ -30,17 +34,14 @@ module.exports = function(err) {
             return message;
         default:
             message = 'Error, comuniquese con el administrador del sistema';
-
             return message;
     }
-
 };
 
 function getPropertiesNames(obj) {
     var message = '';
     for (var key in obj) {
         message += key + ', ';
-
         // do some more stuff with obj[key]
     }
     return message;
